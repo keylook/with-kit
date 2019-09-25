@@ -6,7 +6,7 @@ Currently supported `UIKit` Extensions:
 `UIView`, `UILabel`
 
 Example usage for `UILabel`
-```
+```swift
 let label = UILabel()
   .withTextColor(.black)
   .withFont(.systemFontOfSize(14))
