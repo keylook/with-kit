@@ -29,5 +29,10 @@ open extension UIView {
     return self
   }
   
+  @discardableResult
+  func withAlpha(_ alpha: CGFloat) -> Self {
+    self.alpha = alpha
+    return self
+  }
   
 }
