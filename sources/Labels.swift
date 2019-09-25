@@ -6,49 +6,49 @@ import UIKit
 open extension UILabel {
   
   @discardableResult
-  func uppercased() -> UILabel {
+  func uppercased() -> Self {
     text = text?.uppercased()
     return self
   }
   
   @discardableResult
-  func capitalized() -> UILabel {
+  func capitalized() -> Self {
     text = text?.capitalized
     return self
   }
   
   @discardableResult
-  func withFont(_ font: UIFont) -> UILabel {
+  func withFont(_ font: UIFont) -> Self {
     self.font = font
     return self
   }
   
   @discardableResult
-  func withFontWeight(_ weight: UIFont.Weight) -> UILabel {
+  func withFontWeight(_ weight: UIFont.Weight) -> Self {
     font = UIFont.systemFont(ofSize: font.pointSize, weight: weight)
     return self
   }
   
   @discardableResult
-  func withText(_ text: String?) -> UILabel {
+  func withText(_ text: String?) -> Self {
     self.text = text
     return self
   }
   
   @discardableResult
-  func withTextAlignment(_ alignment: NSTextAlignment) -> UILabel {
+  func withTextAlignment(_ alignment: NSTextAlignment) -> Self {
     textAlignment = alignment
     return self
   }
   
   @discardableResult
-  func withTextColor(_ color: UIColor) -> UILabel {
+  func withTextColor(_ color: UIColor) -> Self {
     textColor = color
     return self
   }
   
   @discardableResult
-  func withNumberOfLines(_ number: Int) -> UILabel {
+  func withNumberOfLines(_ number: Int) -> Self {
     numberOfLines = number
     return self
   }
