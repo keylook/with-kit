@@ -3,17 +3,13 @@
 
 import UIKit
 
+// MARK: Common
+
 open extension UIView {
   
   @discardableResult
   func withTint(_ color: UIColor) -> Self {
     tintColor = color
-    return self
-  }
-  
-  @discardableResult
-  func withCornerRadius(_ radius: CGFloat) -> Self {
-    layer.cornerRadius = radius
     return self
   }
   
@@ -36,3 +32,30 @@ open extension UIView {
   }
   
 }
+
+// MARK: Layer
+
+open extension UIView {
+  
+  @discardableResult
+  func withCornerRadius(_ radius: CGFloat) -> Self {
+    layer.cornerRadius = radius
+    return self
+  }
+  
+  @discardableResult
+  func withBorder(width: CGFloat, color: UIColor?) -> Self {
+    return self.withBorderColor(color).withBorderWidth(width)
+  }
+  
+  @discardableResult
+  func withBorderColor(_ color: UIColor?) -> Self {
+    layer.borderColor = color?.cgColor
+    return self
+  }
+  
+  @discardableResult
+  func withBorderWidth(_ width: CGFloat) -> Self {
+    layer.borderWidth = width
+    return self
+  }
