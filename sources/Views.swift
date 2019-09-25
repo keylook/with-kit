@@ -31,6 +31,12 @@ open extension UIView {
     return self
   }
   
+  @discardableResult
+  func withBoundsClipping(_ clips: Bool) -> Self {
+    clipsToBounds = clips
+    return self
+  }
+  
 }
 
 // MARK: Layer
