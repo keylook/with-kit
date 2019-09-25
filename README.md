@@ -1,4 +1,4 @@
-# functional-kit
+# Functional-kit
 This is a small but handy library that extends `UIKit` in a functional manner.
 Inspired by `SwiftUI` and declarative paradigm.
 
@@ -14,7 +14,7 @@ let label = UILabel()
   .withTextAlignment(.center)
 ```
 
-# installation
-Drop `sources` folder in your project. 
+# Installation
+Drop `sources` folder in your project. More installation options are coming.
 
 This library is work in progress.
