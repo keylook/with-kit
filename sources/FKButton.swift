@@ -2,8 +2,7 @@ import UIKit
 
 open class FKButton: UIButton {
   
-  typealias ButtonTap = () -> Void
-  public var onTap: ButtonTap?
+  public var onTap: VoidBlock?
   
   override init(frame: CGRect) {
     super.init(frame: frame)
