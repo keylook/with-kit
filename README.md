@@ -27,6 +27,7 @@ lazy var myButton = FKButton
     .withImage(Assets.myButtonIcon)
     .withTapBlock(onButtonAction)
 ...
+}
 ```
 
 # Installation
