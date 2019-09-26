@@ -14,6 +14,21 @@ let label = UILabel()
   .withTextAlignment(.center)
 ```
 
+Advanced example for `FKButton` 
+```swift
+class MyView: UIView {
+...
+var onButtonAction: VoidBlock?
+
+lazy var myButton = FKButton
+    .withBackgroundColor(UIColor.white)
+    .withTint(UIColor.black)
+    .withCornerRadius(18)
+    .withImage(Assets.myButtonIcon)
+    .withTapBlock(onButtonAction)
+...
+```
+
 # Installation
 Drop `sources` folder in your project. More installation options are coming.
 
