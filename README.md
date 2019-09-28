@@ -3,7 +3,7 @@ This is a small but handy library that extends `UIKit` in a functional manner.
 Inspired by `SwiftUI` and declarative paradigm.
 
 Currently supported `UIKit` Extensions:
-`UIView`, `UILabel`
+`UIView`, `UILabel`, `UITextField`
 
 Example usage for `UILabel`
 ```swift
@@ -29,6 +29,23 @@ lazy var myButton = FKButton
 ...
 }
 ```
+Example for `UITextField`
+```swift 
+let emailTextField = UITextField()
+  .withPlaceholder("Email")
+  .withKeyboard(.emailAddress)
+  .withAutoCorrect(.no)
+  .withAutoCapitalization(.none)
+
+let passwordField = UITextField()
+  .withPlaceholder("Password")
+  .withAutoCorrect(.no)
+  .withAutoCapitalization(.none)
+  .withSecureTextEntry(true)
+  
+```
+
+
 
 # Installation
 Drop `sources` folder in your project. More installation options are coming.
