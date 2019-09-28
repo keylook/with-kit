@@ -14,19 +14,17 @@ let label = UILabel()
   .withTextAlignment(.center)
 ```
 
-Advanced example for `FKButton` 
+Example for `FKButton` and `.withTapBlock`
 ```swift
-class MyView: UIView {
-...
-var onButtonAction: VoidBlock?
-
 lazy var myButton = FKButton
     .withBackgroundColor(UIColor.white)
     .withTint(UIColor.black)
     .withCornerRadius(18)
     .withImage(Assets.myButtonIcon)
-    .withTapBlock(onButtonAction)
-...
+    .withTapBlock(handleButtonTap)
+    
+func handleButtonTap() {
+  // do something
 }
 ```
 Example for `UITextField`
