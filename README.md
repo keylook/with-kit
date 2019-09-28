@@ -49,3 +49,4 @@ let passwordField = UITextField()
 Drop `sources` folder in your project. More installation options are coming.
 
 This library is work in progress.
+Version 0.1.5
