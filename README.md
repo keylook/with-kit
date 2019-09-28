@@ -20,7 +20,8 @@ lazy var myButton = FKButton
     .withBackgroundColor(UIColor.white)
     .withTint(UIColor.black)
     .withCornerRadius(18)
-    .withImage(Assets.myButtonIcon)
+    .withImage(Assets.myButtonIcon, for: .normal)
+    .withImage(Assets.myDisabledButtonIcon, for: .disabled)
     .withTapBlock(handleButtonTap)
     
 func handleButtonTap() {
