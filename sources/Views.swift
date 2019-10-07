@@ -1,11 +1,6 @@
-//  Created by Innakentiy Lukin on 9/25/19.
-//
-
-import UIKit
-
-// MARK: Common
-
-open extension UIView {
+extension UIView {
+  
+  // MARK: UIView attributes
   
   @discardableResult
   func withUserInteractionEnabled(_ enabled: Bool) -> Self {
@@ -53,11 +48,8 @@ open extension UIView {
     self.tag = tag
     return self
   }
-}
-
-// MARK: Layer
-
-open extension UIView {
+  
+  // MARK: Layer
   
   /// The color of the layer’s shadow. Animatable.
   ///
@@ -98,6 +90,7 @@ open extension UIView {
     layer.shadowOpacity = opacity
     return self
   }
+
   
   @discardableResult
   func withBorderColor(_ color: UIColor?) -> Self {
