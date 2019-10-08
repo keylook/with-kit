@@ -36,6 +36,12 @@ open extension UILabel {
   }
   
   @discardableResult
+  func withAttributedText(_ text: NSAttributedString?) -> Self {
+    attributedText = text
+    return self
+  }
+  
+  @discardableResult
   func withTextAlignment(_ alignment: NSTextAlignment) -> Self {
     textAlignment = alignment
     return self
