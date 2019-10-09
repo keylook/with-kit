@@ -1,4 +1,4 @@
-# FunctionalKit
+# .withKit
 This is a small but handy library that extends `UIKit` in a functional manner.
 Inspired by `SwiftUI` and declarative paradigm.
 
