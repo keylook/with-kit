@@ -1,6 +1,5 @@
 ![alt text](https://github.com/keylook/with-kit/blob/master/withkit.png "With Kit Logo")
 
-# .withKit
 This is a small but handy library that extends `UIKit` in a functional manner.
 Inspired by `SwiftUI` and declarative paradigm.
 
