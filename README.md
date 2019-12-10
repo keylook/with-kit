@@ -3,9 +3,6 @@
 This is a small but handy library that extends `UIKit` in a functional manner.
 Inspired by `SwiftUI` and declarative paradigm.
 
-Currently supported `UIKit` Extensions:
-`UIView`, `UILabel`, `UITextField`
-
 Example usage for `UILabel`
 ```swift
 let label = UILabel()
@@ -15,9 +12,9 @@ let label = UILabel()
   .withTextAlignment(.center)
 ```
 
-Example for `FKButton` and `.withTapBlock`
+Example for `WKButton` and `.withTapBlock`
 ```swift
-lazy var myButton = FKButton
+lazy var myButton = WKButton
     .withBackgroundColor(UIColor.white)
     .withTint(UIColor.black)
     .withCornerRadius(18)
@@ -51,4 +48,4 @@ let passwordField = UITextField()
 Drop `sources` folder in your project. More installation options are coming.
 
 This library is work in progress.
-Version 0.1.5
+Version 0.2.0
