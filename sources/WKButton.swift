@@ -1,6 +1,6 @@
 import UIKit
 
-class WKButton: UIButton {
+open class WKButton: UIButton {
   
   public var onTap: VoidBlock?
   
@@ -12,8 +12,7 @@ class WKButton: UIButton {
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
-  @objc
+
   private func handleTap() {
     guard isUserInteractionEnabled else { return }
     onTap?()
@@ -31,3 +30,4 @@ extension WKButton {
   }
   
 }
+
