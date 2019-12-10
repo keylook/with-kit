@@ -1,6 +1,6 @@
 import UIKit
 
-open class FKButton: UIButton {
+open class WKButton: UIButton {
   
   public var onTap: VoidBlock?
   
