@@ -16,7 +16,8 @@ Example for `WKButton` and `.withTapBlock`
 ```swift
 lazy var myButton = WKButton
     .withBackgroundColor(UIColor.white)
-    .withTint(UIColor.black)
+    .withTitleColor(UIColor.black)
+    .withTitle("My Button, for: .normal)
     .withCornerRadius(18)
     .withImage(Assets.myButtonIcon, for: .normal)
     .withImage(Assets.myDisabledButtonIcon, for: .disabled)
