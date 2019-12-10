@@ -2,7 +2,7 @@ import UIKit
 
 typealias VoidBlock = () -> Void
 
-extension FKButton {
+extension WKButton {
   
   @discardableResult
   func withTapBlock(_ block: VoidBlock?) -> Self {
