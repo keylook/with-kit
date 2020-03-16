@@ -9,10 +9,11 @@ open class WKButton: UIButton {
     addTarget(self, action: #selector(handleTap), for: .touchUpInside)
   }
   
-  required init?(coder aDecoder: NSCoder) {
+  required public init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
+  @objc
   private func handleTap() {
     guard isUserInteractionEnabled else { return }
     onTap?()
@@ -22,9 +23,9 @@ open class WKButton: UIButton {
 extension WKButton {
   
   @discardableResult
-  func withTapBlock(_ block: VoidBlock?) -> Self {
+  func withTapHandler(_ handler: VoidBlock?) -> Self {
     onTap = {
-      block?()
+      handler?()
     }
     return self
   }

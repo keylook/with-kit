@@ -1,8 +1,22 @@
 import UIKit
+import SDWebImage
 
 // MARK: - UIView
 
 extension UIView {
+  
+  @discardableResult
+  func withTapGestureRecoginzer(_ target: Any?, selector: Selector?) -> Self {
+    let gesture = UITapGestureRecognizer(target: target, action: selector)
+    addGestureRecognizer(gesture)
+    return self
+  }
+  
+  @discardableResult
+  func withGestureRecognizer(_ recoginzer: UIGestureRecognizer) -> Self {
+    addGestureRecognizer(recoginzer)
+    return self
+  }
   
   @discardableResult
   func withSuperView(_ superView: UIView) -> Self {
@@ -58,6 +72,28 @@ extension UIView {
   }
   
   // MARK: - Layer
+  
+  @discardableResult
+  func withRoundCorners(_ corners: UIRectCorner = .allCorners, radius: CGFloat) -> Self {
+    
+    let roundPath = UIBezierPath(
+        roundedRect: bounds,
+        byRoundingCorners: corners,
+        cornerRadii: CGSize(width: 10, height: 10)
+    )
+    
+    let maskLayer = CAShapeLayer()
+    maskLayer.path = roundPath.cgPath
+    layer.mask = maskLayer
+    return self
+  }
+  
+  @discardableResult
+  func withCornerMask(_ mask: CACornerMask, radius: CGFloat) -> Self {
+    layer.maskedCorners = mask
+    layer.cornerRadius = radius
+    return self
+  }
   
   @discardableResult
   func withCornerRadius(_ radius: CGFloat) -> Self {
@@ -318,6 +354,11 @@ extension UITableView {
     return self
   }
   
+  @discardableResult
+  func withCell(_ cellClass: AnyClass) -> Self {
+    register(cellClass, forCellReuseIdentifier: "\(type(of: cellClass))")
+    return self
+  }
   
 }
 
@@ -358,6 +399,18 @@ extension UITextField {
   @discardableResult
   func withText(_ text: String?) -> Self {
     self.text = text
+    return self
+  }
+  
+  @discardableResult
+  func withTextColor(_ color: UIColor) -> Self {
+    textColor = color
+    return self
+  }
+  
+  @discardableResult
+  func withFont(_ font: UIFont) -> Self {
+    self.font = font
     return self
   }
   
@@ -454,6 +507,18 @@ extension UITextView {
     return self
   }
   
+  @discardableResult
+  func withScrolling(_ enabled: Bool) -> Self {
+    isScrollEnabled = enabled
+    return self
+  }
+  
+  @discardableResult
+  func wihtDataDetecting(_ types: UIDataDetectorTypes) -> Self {
+    dataDetectorTypes = types
+    return self
+  }
+  
 }
 
 // MARK: - UIStackView
@@ -479,7 +544,7 @@ extension UIStackView {
   }
   
   @discardableResult
-  func withTextAlignment(_ alignment: UIStackView.Alignment) -> Self {
+  func withAlignment(_ alignment: UIStackView.Alignment) -> Self {
     self.alignment = alignment
     return self
   }
@@ -492,8 +557,48 @@ extension UIStackView {
   
 }
 
+// MARK: - UISlider
 
-/// Snapkit only
+public extension UISlider {
+  
+  @discardableResult
+  func withTrackTint(_ color: UIColor) -> Self {
+    maximumTrackTintColor = color
+    return self
+  }
+  
+  @discardableResult
+  func withValue(_ value: Float) -> Self {
+    self.value = value
+    return self
+  }
+  
+}
+
+// MARK: - NSAttributedString
+
+extension NSMutableAttributedString {
+  
+  @discardableResult
+  func withColor(_ color: UIColor) -> Self {
+    
+    let range = self.mutableString.range(of: string)
+    addAttribute(.foregroundColor, value: color, range: range)
+    return self
+  }
+  
+  @discardableResult
+  func withFont(_ font: UIFont) -> Self {
+    let range = self.mutableString.range(of: string)
+    addAttribute(.font, value: font, range: range)
+    return self
+  }
+
+}
+
+
+
+// MARK: - SnapKit Required -
 
 extension UIView {
   
@@ -527,6 +632,26 @@ extension UIView {
     snp.makeConstraints { make in
       make.size.equalTo(size)
     }
+    return self
+  }
+  
+  @discardableResult
+  func withSize(_ size: CGFloat) -> Self {
+    snp.makeConstraints { make in
+      make.size.equalTo(size)
+    }
+    return self
+  }
+  
+}
+
+// MARK: - SDWebImage Required -
+
+extension UIImageView {
+  
+  @discardableResult
+  func withImageUrl(_ url: URL?) -> Self {
+    self.sd_setImage(with: url)
     return self
   }
   
